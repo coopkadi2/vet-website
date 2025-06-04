@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'garamond';
+    src: url('EBGaramond-VariableFont_wght.ttf');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.slideshow {
+    background-image: url('../img/music-retreat-001.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 75px;
+    width: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+h6 {
+    font-family: 'garamond';
+    font-size: 14pt;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    text-align: right;
+    width: 100vw;
+}
