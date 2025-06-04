@@ -3,22 +3,29 @@
     src: url('EBGaramond-VariableFont_wght.ttf');
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0;
+@font-face {
+    font-family: 'gill-sans';
+    src: url('gill-sans.otf');
 }
 
 .slideshow {
-    background-image: url('../img/music-retreat-001.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
-    padding: 60px;
     box-sizing: border-box;
+    transition: background-image 0.5s ease-in-out;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.left {
+    padding: 60px;
 }
 
 .logo {
@@ -26,17 +33,88 @@ body {
     width: auto;
 }
 
-.buttons {
+.open {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
+    padding: 60px;
+    width: 240px;
+    flex-grow: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+.closed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 60px;
+    width: 240px;
+    flex-grow: 0;
+}
+
+.menu-open {
+    height: 22px;
+    width: 22px; /* Set a fixed width */
+    min-width: 22px; /* Prevent shrinking */
+    max-width: 22px; /* Prevent growing */
+    cursor: pointer;
+    padding-top: 28px;
+    padding-bottom: 88px;
+}
+
+.menu-open:hover {
+    opacity: 0.6;
+}
+
+.menu-closed {
+    height: 22px;
+    width: 32px; /* Set a fixed width */
+    min-width: 32px; /* Prevent shrinking */
+    max-width: 32px; /* Prevent growing */
+    cursor: pointer;
+    padding-top: 28px;
+    padding-bottom: 88px;
+}
+
+.menu-closed:hover {
+    opacity: 0.6;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'gill-sans';
+    font-size: 20pt;
+    display: flex;
+    align-items: flex start;
+    justify-content: end;
+    height: 60px;
+}
+
+a:hover {
+    opacity: 0.6;
 }
 
 h6 {
     font-family: 'garamond';
-    font-size: 14pt;
-    font-weight: 500;
+    font-size: 11pt;
+    font-weight: 400;
     color: #fff;
     margin: 0;
     text-align: right;
     width: 100vw;
+}
+
+.open, .closed {
+    transition: opacity 0.5s ease-in-out;
 }
