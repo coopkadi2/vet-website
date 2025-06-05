@@ -24,13 +24,20 @@
 }
 
 body {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
     margin: 0;
 }
 
 .left {
-    padding: 60px;
+    padding-top: 60px;
+    padding-right: 120px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 60px;
 }
 
 .logo {
@@ -45,9 +52,11 @@ body {
     align-items: flex-end;
     padding: 60px;
     width: 240px;
-    flex-grow: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(20px);
+    height: calc(100vh - 120px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .closed {
@@ -57,7 +66,30 @@ body {
     align-items: flex-end;
     padding: 60px;
     width: 240px;
-    flex-grow: 0;
+}
+
+.open, .closed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 60px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: opacity 1s ease-in-out;
+}
+
+.bbground {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+.wtground {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
 }
 
 .menu-open {
@@ -97,7 +129,6 @@ nav {
 
 .pages {
     text-decoration: none;
-    color: #fff;
     font-family: 'gill-sans';
     font-size: 20pt;
     display: flex;
@@ -111,7 +142,6 @@ a:hover {
 }
 
 .title {
-    color: #fff;
     font-family: 'gill-sans-medium';
     font-size: 26pt;
     display: flex;
@@ -120,16 +150,36 @@ a:hover {
     text-decoration: none;
 }
 
+.white {
+    color: #fff;
+}
+
+.black {
+    color: #000;
+}
+
 h6 {
     font-family: 'garamond';
     font-size: 10pt;
     font-weight: 300;
-    color: #fff;
     margin: 0;
     text-align: right;
     width: 100vw;
 }
 
-.open, .closed {
-    transition: opacity 0.5s ease-in-out;
+.icon {
+    height: 60px;
+    width: auto;
+}
+
+.adjust {
+    height: 45px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 95px;
 }
