@@ -55,7 +55,7 @@ html, body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 360px;
+  width: 420px;
   height: 100vh;
   box-sizing: border-box; /* Ensures padding doesn't add to height */
   overflow-y: auto;
@@ -73,7 +73,7 @@ html, body {
     justify-content: space-between;
     align-items: flex-end;
     padding: 60px;
-    width: 240px;
+    width: 60px;
 }
 
 .open, .closed {
@@ -81,7 +81,6 @@ html, body {
   top: 0;
   right: 0;
   z-index: 1000;
-  width: 420px;              /* total width INCLUDING padding */
   height: 100vh;
   box-sizing: border-box;
   padding: 60px;
@@ -211,6 +210,7 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    padding-right: 60px;
     gap: 95px;
 }
 
@@ -234,6 +234,7 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    padding-right: 60px;
     gap: 60px;
 }
 
@@ -319,6 +320,7 @@ strong {
 
 .collab {
     max-width: 345px;
+    text-align: justify;
 }
 
 .no-pointer-events {
@@ -388,10 +390,9 @@ strong {
 }
 
 .pics img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
-    object-fit: contain; /* Optional: controls how the image fills the box */
 }
 
 .credits {

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Start with only the closed menu visible
     open.classList.add('menu-inactive');
     open.style.display = 'none';
+    closed.classList.remove('menu-inactive');
     closed.style.display = 'flex';
 
     // Open the menu
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closedImage.addEventListener('click', function () {
         open.style.display = 'flex';
         open.classList.remove('menu-inactive');
+        closed.classList.add('menu-inactive');
         closed.style.display = 'none';
     });
 
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     openImage.addEventListener('click', function () {
         open.style.display = 'none';
         open.classList.add('menu-inactive');
+        closed.classList.remove('menu-inactive');
         closed.style.display = 'flex';
     });
 });
