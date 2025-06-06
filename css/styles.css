@@ -28,6 +28,12 @@ body {
     margin: 0;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .left {
     padding-top: 60px;
     padding-right: 120px;
@@ -46,17 +52,19 @@ body {
 }
 
 .open {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 60px;
-    width: 240px;
-    height: calc(100vh - 120px);
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100vh;
+  box-sizing: border-box; /* Ensures padding doesn't add to height */
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .closed {
@@ -69,17 +77,24 @@ body {
 }
 
 .open, .closed {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 60px;
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    transition: opacity 1s ease-in-out;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: 360px;              /* total width INCLUDING padding */
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow-y: auto;          /* allow menu to scroll independently */
+}
+
+.open nav {
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .bbground {
@@ -302,6 +317,7 @@ strong {
 
 .no-pointer-events {
   pointer-events: none;
+  user-select: none;
 }
 
 .faded {

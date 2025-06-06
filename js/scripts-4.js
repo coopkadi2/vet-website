@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".archive");
   const overlay = document.getElementById("overlay");
-  const menuElements = document.querySelectorAll(".menu, .menu-open, .menu-closed");
+  const menuElements = document.querySelectorAll(".menu, .menu-open, .menu-closed, #datetime-container");
+
 
   images.forEach((img) => {
     img.addEventListener("click", (event) => {
