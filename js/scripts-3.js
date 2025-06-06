@@ -3,19 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const open = document.querySelector('.open');
 
     // Start with only the closed menu visible
+    open.classList.add('menu-inactive');
     open.style.display = 'none';
+    closed.style.display = 'flex';
 
-    // Clicking the "closed" image shows the open menu
+    // Open the menu
     const closedImage = document.querySelector('.menu-closed');
     closedImage.addEventListener('click', function () {
-        closed.style.display = 'none';
         open.style.display = 'flex';
+        open.classList.remove('menu-inactive');
+        closed.style.display = 'none';
     });
 
-    // Clicking the "open" image hides everything and goes back to "closed"
+    // Close the menu
     const openImage = document.querySelector('.menu-open');
     openImage.addEventListener('click', function () {
         open.style.display = 'none';
+        open.classList.add('menu-inactive');
         closed.style.display = 'flex';
     });
 });
