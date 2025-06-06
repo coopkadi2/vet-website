@@ -299,3 +299,12 @@ strong {
 .collab {
     max-width: 345px;
 }
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.faded {
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
