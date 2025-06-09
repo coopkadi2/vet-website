@@ -454,4 +454,8 @@ strong {
     overflow-y: auto;
     max-height: 100%;
   }
+
+  #datetime-container {
+    display: none !important;
+  }
 }
