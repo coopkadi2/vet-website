@@ -423,25 +423,31 @@ strong {
 }
 
 @media screen and (max-width: 768px) {
-    .content {
-        flex-direction: column-reverse;
-    }
+  .content {
+    flex-direction: column-reverse;
+  }
 
-    .text {
-        width: 100%;
-        padding-left: 0;
-        padding-top: 0px;
-        padding-bottom: 30px;
-    }
+  .text {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
 
-    .pics {
-        width: 100%;
-    }
+  .pics {
+    width: 100%;
+  }
 
-    body.slideshow, html {
+  /* Limit scroll locking to body.slideshow (i.e., index.html only) */
+  body.slideshow {
     height: 100vh;
     overflow: hidden;
     overscroll-behavior: none;
+  }
+
+  html {
+    height: auto;
+    overflow: auto;
   }
 
   .open,
