@@ -438,14 +438,16 @@ strong {
     width: 100%;
   }
 
-  /* Limit scroll locking to body.slideshow (i.e., index.html only) */
+  /* Freeze scroll only on the index page */
+  html,
   body.slideshow {
     height: 100vh;
     overflow: hidden;
     overscroll-behavior: none;
   }
 
-  html {
+  /* Allow scroll elsewhere */
+  body:not(.slideshow) {
     height: auto;
     overflow: auto;
   }
