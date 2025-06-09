@@ -438,3 +438,22 @@ strong {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 768px) {
+  /* Limit menu containers height to viewport height minus padding */
+  .open, .closed {
+    height: calc(100vh - 120px); /* 100vh minus top + bottom padding (60px + 60px) */
+    overflow: hidden;            /* Prevent these containers from scrolling */
+  }
+
+  /* Allow nav to scroll inside the menu */
+  .open nav {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  /* Optional: prevent body scroll if you want a locked screen on all pages with menu open */
+  /* body {
+    overflow: hidden;
+  } */
+}
