@@ -468,5 +468,6 @@ strong {
   .indi-p {
     width: 100%;
     height: auto;
+    align-items: flex-start;
   }
 }
