@@ -438,9 +438,7 @@ strong {
     width: 100%;
   }
 
-  /* Freeze scroll only on the index page */
-  html,
-  body.slideshow {
+    .slideshow {
     height: 100vh;
     overflow: hidden;
     overscroll-behavior: none;
@@ -465,5 +463,10 @@ strong {
 
   #datetime-container {
     display: none !important;
+  }
+
+  .indi-p {
+    width: 100%;
+    height: auto;
   }
 }
