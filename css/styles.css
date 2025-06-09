@@ -456,10 +456,3 @@ strong {
     max-height: 100%;
   }
 }
-
-@media screen and (max-width: 768px) {
-  body {
-    overscroll-behavior: none;
-    touch-action: none; /* optional – disables gestures like pull-to-refresh */
-  }
-}
