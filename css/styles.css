@@ -88,6 +88,7 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  transition: opacity 1s ease-in-out;
   overflow-y: auto;          /* allow menu to scroll independently */
 }
 
