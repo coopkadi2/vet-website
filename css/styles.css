@@ -494,10 +494,10 @@ strong {
     .archive-container {
     display: flex;
     flex-direction: column; /* Stack vertically */
-    align-items: center; /* Center horizontally */
+    align-items: flex-start; /* Center horizontally */
     justify-content: flex-start;
     padding-right: 0; /* Remove right padding on mobile */
-    gap: 30px; /* Space between images */
+    gap: 60px; /* Space between images */
   }
 
   .archive {
@@ -505,5 +505,44 @@ strong {
     width: auto;
     cursor: pointer;
     z-index: 1;
+  }
+
+  .personal {
+    display: flex;
+    flex-direction: column; /* Force vertical stacking */
+    max-width: 100%; /* Use full width on mobile */
+    gap: 30px; /* Consistent spacing between sections */
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+
+  .federica, .andrew {
+    flex: none; /* Remove flex sizing */
+    width: 100%; /* Force full width */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subordinate {
+    width: 100%; /* Force full width */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 30px;
+    gap: 15px;
+  }
+
+  /* Ensure headshots and text scale nicely */
+  .headshot, .headshot-small {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .info {
+    max-width: 100%; /* Use full width on mobile */
+  }
+
+  .collab {
+    max-width: 100%; /* Use full width on mobile */
   }
 }
