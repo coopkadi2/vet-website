@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Add cursor pointer to indicate it's clickable, but not over menu areas
     body.style.cursor = 'pointer';
     
-    // Remove pointer cursor over menu areas
-    const menuAreas = document.querySelectorAll('.open, .closed');
+    // Remove pointer cursor over menu areas and title
+    const menuAreas = document.querySelectorAll('.open, .closed, .left');
     menuAreas.forEach(menuArea => {
         menuArea.style.cursor = 'default';
     });
