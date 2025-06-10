@@ -490,4 +490,20 @@ strong {
   .adjust {
     height: 45px;
   }
+
+    .archive-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start;
+    padding-right: 0; /* Remove right padding on mobile */
+    gap: 30px; /* Space between images */
+  }
+
+  .archive {
+    height: 120px; /* Keep same size as desktop */
+    width: auto;
+    cursor: pointer;
+    z-index: 1;
+  }
 }
