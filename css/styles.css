@@ -525,7 +525,7 @@ strong {
 
   .archive {
     height: 120px;
-    width: auto;  /* Changed from 120px to auto */
+    width: 120px;  /* Changed from 120px to auto */
     object-fit: contain;  /* Changed from cover to contain */
     cursor: pointer;
     z-index: 1;
