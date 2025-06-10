@@ -524,11 +524,12 @@ strong {
   }
 
   .archive {
-    height: 120px; /* Keep same size as desktop */
-    width: auto;
+    height: 120px;
+    width: auto;  /* Changed from 120px to auto */
+    object-fit: contain;  /* Changed from cover to contain */
     cursor: pointer;
     z-index: 1;
-  }
+}
 
   .personal {
     display: flex;
