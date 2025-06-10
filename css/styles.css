@@ -545,4 +545,15 @@ strong {
   .collab {
     max-width: 100%; /* Use full width on mobile */
   }
+
+  p {
+    -webkit-text-size-adjust: none; /* Prevents text scaling */
+  }
+  
+  /* Disable automatic phone number detection and styling */
+  a[href^="tel:"] {
+    color: inherit;
+    text-decoration: none;
+    pointer-events: none;
+  }
 }
