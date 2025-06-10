@@ -514,22 +514,22 @@ strong {
     height: 45px;
   }
 
-    .archive-container {
+.archive-container {
     display: flex;
-    flex-direction: column; /* Stack vertically */
-    align-items: flex-start; /* Center horizontally */
+    flex-direction: column; /* One per row */
+    align-items: center; /* Center horizontally */
     justify-content: flex-start;
-    padding-right: 0; /* Remove right padding on mobile */
-    gap: 60px; /* Space between images */
+    padding-right: 0;
+    gap: 45px; /* Keep same gap as desktop */
   }
 
   .archive {
     height: 120px;
-    width: 120px;  /* Changed from 120px to auto */
-    object-fit: cover;  /* Changed from cover to contain */
+    width: 120px; /* Force square like desktop */
+    object-fit: cover; /* Crop to fit square like desktop */
     cursor: pointer;
     z-index: 1;
-}
+  }
 
   .personal {
     display: flex;
