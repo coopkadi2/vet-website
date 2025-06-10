@@ -209,7 +209,7 @@ p {
 .projects {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end; /* Changed from center to flex-end to align caption baselines */
     justify-content: flex-start;
     padding-right: 60px;
     gap: 95px;
@@ -223,9 +223,18 @@ p {
     height: 35px;
 }
 
+.adjust3 {
+    height: 52px;
+}
+
+.adjust4 {
+    height: 56px;
+}
+
 .archive {
     height: 120px;
-    width: auto;
+    width: 120px;
+    object-fit: cover;
     cursor: pointer;
     z-index: 1;
 }
@@ -236,7 +245,7 @@ p {
     align-items: center;
     justify-content: flex-start;
     padding-right: 60px;
-    gap: 60px;
+    gap: 45px;
 }
 
 .archive:hover {
@@ -292,7 +301,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 30px;
+    padding-top: 15px;
     gap: 15px;
     width: calc(50% - 15px); 
 }
@@ -319,7 +328,7 @@ p {
 .bio2 {
     font-family: 'gill-sans';
     font-size: 15pt;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .cv {
@@ -350,29 +359,37 @@ strong {
 }
 
 .indi-p {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60px;
-  height: 110px; /* enough height for icon + caption space */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    height: 110px; /* enough height for icon + caption space */
+    justify-content: flex-end; /* Push content to bottom */
+}
+
+.indi-p a {
+    display: flex;
+    align-items: center; /* Center the icon vertically within its space */
+    justify-content: center;
+    height: 60px; /* Fixed height for icon area */
+    margin-bottom: 10px; /* Space between icon and caption */
 }
 
 .caption {
-  position: absolute;
-  bottom: 0; /* stick it to the bottom of the 90px container */
-  text-align: center;
-  font-family: 'garamond';
-  font-size: 11pt;
-  font-weight: 300;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  width: max-content;
-  max-width: 100px;
-  white-space: nowrap;
-  transform: translateX(-50%);
-  left: 50%;
+    position: absolute;
+    bottom: -34px; /* Add vertical spacing between icon and text */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'garamond';
+    font-size: 11pt;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    width: 150px; /* Wider to prevent wrapping */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .indi-p:hover .caption {
@@ -465,21 +482,27 @@ strong {
     display: none !important;
   }
 
-  .projects {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between; /* Changed from flex-start */
-    padding-right: 0; /* Remove right padding on mobile */
-    gap: 30px 0; /* Vertical gap 30px, horizontal gap 0 */
-  }
+   .projects {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end; /* Keep caption alignment */
+        justify-content: space-between;
+        padding-right: 0;
+        gap: 30px 0;
+    }
 
-  .indi-p {
-    width: calc(50% - 15px); /* Two per row with small gap */
-    height: auto;
-    align-items: center; /* Center the icons within their containers */
-    margin-bottom: 30px; /* Add bottom margin for spacing */
-  }
+   .indi-p {
+        width: calc(50% - 15px);
+        height: auto;
+        align-items: center;
+        margin-bottom: 30px;
+        justify-content: flex-end; /* Maintain bottom alignment on mobile */
+    }
+
+    .indi-p a {
+        height: 60px; /* Maintain consistent icon area height */
+        margin-bottom: 10px;
+    }
 
   /* Ensure icons stay the same size */
   .icon {
