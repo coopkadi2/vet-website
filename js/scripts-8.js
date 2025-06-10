@@ -46,8 +46,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     
     // Add click handler to navigate to projects page
-    body.addEventListener('click', navigateToProjects);
+    body.addEventListener('click', (event) => {
+        // Check if the click target is within the menu areas
+        const menuAreas = document.querySelectorAll('.open, .closed');
+        let clickedOnMenu = false;
+        
+        menuAreas.forEach(menuArea => {
+            if (menuArea.contains(event.target)) {
+                clickedOnMenu = true;
+            }
+        });
+        
+        // Only navigate if the click wasn't on a menu area
+        if (!clickedOnMenu) {
+            navigateToProjects();
+        }
+    });
     
-    // Add cursor pointer to indicate it's clickable
+    // Add cursor pointer to indicate it's clickable, but not over menu areas
     body.style.cursor = 'pointer';
+    
+    // Remove pointer cursor over menu areas
+    const menuAreas = document.querySelectorAll('.open, .closed');
+    menuAreas.forEach(menuArea => {
+        menuArea.style.cursor = 'default';
+    });
 });
