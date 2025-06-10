@@ -465,9 +465,29 @@ strong {
     display: none !important;
   }
 
-  .indi-p {
-    width: 100%;
-    height: auto;
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: space-between; /* Changed from flex-start */
+    padding-right: 0; /* Remove right padding on mobile */
+    gap: 30px 0; /* Vertical gap 30px, horizontal gap 0 */
+  }
+
+  .indi-p {
+    width: calc(50% - 15px); /* Two per row with small gap */
+    height: auto;
+    align-items: center; /* Center the icons within their containers */
+    margin-bottom: 30px; /* Add bottom margin for spacing */
+  }
+
+  /* Ensure icons stay the same size */
+  .icon {
+    height: 60px;
+    width: auto;
+  }
+
+  .adjust {
+    height: 45px;
   }
 }
