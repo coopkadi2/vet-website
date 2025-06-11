@@ -516,17 +516,19 @@ strong {
 
 /* Replace the existing .archive-container mobile styles with this: */
 
+/* Replace the existing .archive-container mobile styles with this: */
+
 .archive-container {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to create rows */
     align-items: center;
     justify-content: space-between; /* Distribute items evenly */
     padding-right: 0;
-    gap: 30px 15px; /* 30px vertical gap, 15px horizontal gap */
+    gap: 30px; /* Equal 30px gap both vertically and horizontally */
 }
 
 .archive {
-    width: calc(50% - 7.5px); /* Two per row with gap consideration */
+    width: calc(50% - 15px); /* Two per row with gap consideration */
     height: 120px; /* Keep consistent height */
     object-fit: cover;
     cursor: pointer;
