@@ -214,6 +214,7 @@ p {
 .projects {
     display: flex;
     flex-wrap: wrap;
+    max-width: 720px;
     align-items: flex-end; /* Changed from center to flex-end to align caption baselines */
     justify-content: flex-start;
     padding-right: 60px;
