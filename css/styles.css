@@ -238,8 +238,8 @@ p {
 }
 
 .archive {
-    height: 120px;
-    width: 120px;
+    height: 105px;
+    width: 105px;
     object-fit: cover;
     cursor: pointer;
     z-index: 1;
@@ -248,6 +248,7 @@ p {
 .archive-container {
     display: flex;
     flex-wrap: wrap;
+    max-width: 720px; /* Add this line to match .projects */
     align-items: center;
     justify-content: flex-start;
     padding-right: 60px;
