@@ -1,8 +1,8 @@
 const images = [
-    'img/findlay/findlay-a-004.jpg',
-    'img/tpcc/tpcc-001.png',
-    'img/riyadh/riyadh-001.jpg',
-    'img/crescendo/crescendo-003.jpg'
+    'img/cover/JPEG/crescendo-003.jpg',
+    'img/cover/JPEG/findlay-a-004.jpg',
+    'img/cover/JPEG/riyadh-001.jpg',
+    'img/cover/JPEG/tpcc-001.jpg'
 ];
 
 // Pick a random image
