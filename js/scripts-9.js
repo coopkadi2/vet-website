@@ -1,33 +1,92 @@
 // scripts-project-images.js
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".pics img");
+  const images = Array.from(document.querySelectorAll(".pics img"));
   const overlay = document.getElementById("overlay");
   const menuElements = document.querySelectorAll(".menu, .menu-open, .menu-closed, #datetime-container");
+  const menuIcon = document.querySelector(".menu-open");
 
-  images.forEach((img) => {
+  let currentIndex = 0;
+
+  const closeOverlay = () => {
+    overlay.style.display = "none";
+    overlay.innerHTML = "";
+
+    menuElements.forEach(el => {
+      el.classList.remove("no-pointer-events", "faded");
+    });
+  };
+
+  const showImage = (index) => {
+    currentIndex = (index + images.length) % images.length;
+    overlay.innerHTML = "";
+
+    // Enlarged image — click on it shouldn't close the overlay
+    const enlargedImg = images[currentIndex].cloneNode();
+    enlargedImg.classList.add("overlay-img");
+    enlargedImg.addEventListener("click", (event) => event.stopPropagation());
+    overlay.appendChild(enlargedImg);
+
+    // Close (x) button — reuses the same icon/image used to close the menu
+    const closeBtn = menuIcon.cloneNode();
+    closeBtn.className = "overlay-close";
+    closeBtn.removeAttribute("id");
+    closeBtn.removeAttribute("style");
+    closeBtn.setAttribute("alt", "Close");
+    closeBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeOverlay();
+    });
+    overlay.appendChild(closeBtn);
+
+    // Prev/next arrows (only if there's more than one image)
+    if (images.length > 1) {
+      const prevBtn = document.createElement("img");
+      prevBtn.className = "overlay-arrow overlay-prev";
+      prevBtn.src = "../../img/slideshow-left.png";
+      prevBtn.setAttribute("alt", "Previous image");
+      prevBtn.setAttribute("aria-label", "Previous image");
+      prevBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        showImage(currentIndex - 1);
+      });
+      overlay.appendChild(prevBtn);
+
+      const nextBtn = document.createElement("img");
+      nextBtn.className = "overlay-arrow overlay-next";
+      nextBtn.src = "../../img/slideshow-right.png";
+      nextBtn.setAttribute("alt", "Next image");
+      nextBtn.setAttribute("aria-label", "Next image");
+      nextBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        showImage(currentIndex + 1);
+      });
+      overlay.appendChild(nextBtn);
+    }
+
+    overlay.style.display = "flex";
+  };
+
+  images.forEach((img, index) => {
     img.addEventListener("click", (event) => {
       event.stopPropagation();
+      showImage(index);
 
-      // Show overlay with cloned image
-      overlay.innerHTML = "";
-      const enlargedImg = img.cloneNode();
-      overlay.appendChild(enlargedImg);
-      overlay.style.display = "flex";
-
-      // Disable interaction and fade menu
       menuElements.forEach(el => {
         el.classList.add("no-pointer-events", "faded");
       });
     });
   });
 
+  // Clicking the overlay background (not the image or buttons) closes it
   overlay.addEventListener("click", () => {
-    overlay.style.display = "none";
-    overlay.innerHTML = "";
+    closeOverlay();
+  });
 
-    // Re-enable interaction and un-fade menu
-    menuElements.forEach(el => {
-      el.classList.remove("no-pointer-events", "faded");
-    });
+  // Optional: keyboard support while overlay is open
+  document.addEventListener("keydown", (event) => {
+    if (overlay.style.display !== "flex") return;
+    if (event.key === "Escape") closeOverlay();
+    if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+    if (event.key === "ArrowRight") showImage(currentIndex + 1);
   });
 });
